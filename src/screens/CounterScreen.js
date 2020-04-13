@@ -1,15 +1,15 @@
 import React, { useState, useReducer } from 'react';
 import { StyleSheet, View, Text, Button } from 'react-native';
 
-const initialState = 0;
+const initialState = { count: 0 };
 const INCREMENT = 1;
 
 const reducer = (state, action) => {
   switch (action.type) {
     case 'Increase':
-      return state + action.payload;
+      return { ...state, count: state.count + action.payload };
     case 'Decrease':
-      return state + action.payload;
+      return { ...state, count: state.count - action.payload };
     default:
       return state;
   }
@@ -17,6 +17,7 @@ const reducer = (state, action) => {
 
 const CounterScreen = () => {
   let [state, dispatch] = useReducer(reducer, initialState);
+  const { count } = state;
   // let [counter, setCounter] = useState(0); // set initial state
 
   return (
@@ -27,9 +28,9 @@ const CounterScreen = () => {
       />
       <Button
         title="Decrease"
-        onPress={() => dispatch({ type: 'Decrease', payload: -1 * INCREMENT })}
+        onPress={() => dispatch({ type: 'Decrease', payload: INCREMENT })}
       />
-      <Text>Current Count: {state}</Text>
+      <Text>Current Count: {count}</Text>
       <Text>Simple use of state using React Hooks at its basic form!</Text>
     </View>
   );
