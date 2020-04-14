@@ -22,6 +22,10 @@ const Home = ({ navigation }) => {
           title="Go to Text Screen"
           onPress={() => navigation.navigate('Text')}
         />
+        <Button
+          title="Go to Box Layout Screen"
+          onPress={() => navigation.navigate('Box')}
+        />
       </View>
     </View>
   );

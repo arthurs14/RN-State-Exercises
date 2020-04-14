@@ -5,6 +5,7 @@ import CounterScreen from '../screens/CounterScreen';
 import ColorScreen from '../screens/ColorScreen';
 import SquareScreen from '../screens/SquareScreen';
 import TextScreen from '../screens/TextScreen';
+import BoxScreen from '../screens/Layouts/BoxScreen';
 
 const NavigationStack = createStackNavigator();
 
@@ -16,6 +17,7 @@ const MainStack = () => {
       <NavigationStack.Screen name="Color" component={ColorScreen} />
       <NavigationStack.Screen name="Square" component={SquareScreen} />
       <NavigationStack.Screen name="Text" component={TextScreen} />
+      <NavigationStack.Screen name="Box" component={BoxScreen} />
     </NavigationStack.Navigator>
   );
 };
